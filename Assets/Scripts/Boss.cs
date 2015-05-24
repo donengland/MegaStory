@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent (typeof(Rigidbody2D))]
 [RequireComponent (typeof(Animator))]
 public class Boss : MonoBehaviour, IHitable  {
 	
@@ -8,6 +9,7 @@ public class Boss : MonoBehaviour, IHitable  {
 	public AudioClip audio_fire;
 
 	public Rigidbody2D enemy_bullet;
+	private Rigidbody2D rb2d;
 	public float bullet_force;
 	
 	public float health;
@@ -21,8 +23,11 @@ public class Boss : MonoBehaviour, IHitable  {
 	public bool left = true;
 	public float fire_rate = 2f;
 	private float fire_count = 0f;
+
+	public float jump_force = 600f;
+	public float jump_timer = 0f;
 	
-	public float velocity_x = -1.5f;
+	public float velocity_x = -2f;
 	public float velocity_y_max = 1.5f;
 	public float velocity_y_current = 1.5f;
 	public float velocity_y_accel = 1f;
@@ -35,6 +40,7 @@ public class Boss : MonoBehaviour, IHitable  {
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator>();
+		rb2d = GetComponent<Rigidbody2D>();
 		player_transform = GameObject.FindGameObjectWithTag("Player").transform;
 	}
 	
@@ -72,12 +78,20 @@ public class Boss : MonoBehaviour, IHitable  {
 			fire_count += Time.deltaTime;
 		}
 		if (fire_count >= fire_rate && fire_weapon) {
-			fire_count = 0f;
+			fire_count = Random.Range (-2f, 0f);
 			ShootPlayer();
+		}
+
+		if (jump_timer <= 0) {
+			rb2d.AddForce(new Vector2(0f, jump_force));
+			jump_timer = Random.Range (1.0f, 3.0f);
+		} else {
+			jump_timer -= Time.deltaTime;
 		}
 	}
 	
 	void FixedUpdate() {
+		rb2d.velocity = new Vector2(velocity_x, rb2d.velocity.y);
 	}
 
 	public void ShootPlayer() {
@@ -113,6 +127,16 @@ public class Boss : MonoBehaviour, IHitable  {
 		PlayerController pc = (PlayerController)other.gameObject.GetComponent(typeof(PlayerController));
 		if (pc != null) {
 			pc.Hit(transform.position, 600f, 0.1f, collision_damage);
+		}
+	}
+	
+	void OnCollisionEnter2D(Collision2D other) {
+		if (other.collider.transform.position.y >= (transform.position.y -0.1f)){
+			if (other.collider.transform.position.x > transform.position.x) {
+				if (velocity_x > 0){ velocity_x = -velocity_x; }
+			} else if (other.collider.transform.position.x <= transform.position.x) {
+				if (velocity_x < 0){ velocity_x = -velocity_x; }
+			}
 		}
 	}
 }
