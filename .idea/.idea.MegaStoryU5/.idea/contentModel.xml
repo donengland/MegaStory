@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\OtherFiles\SVN-Repos\MegaStoryU5" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets\Scripts" t="Include">
+        <e p="Boss.cs" t="Include" />
+        <e p="CameraController.cs" t="Include" />
+        <e p="Death_Floor.cs" t="Include" />
+        <e p="Enemy.cs" t="Include" />
+        <e p="EnemyBullet.cs" t="Include" />
+        <e p="EnemySpawner.cs" t="Include" />
+        <e p="IHitable.cs" t="Include" />
+        <e p="PlayerBullet.cs" t="Include" />
+        <e p="PlayerController.cs" t="Include" />
+      </e>
+      <e p="MegaStoryU5.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+    </e>
+    <e p="C:\Users\Nex\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Nex\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_MegaStoryU5.1025709073.00" t="ExcludeRecursive" />
+  </component>
+</project>

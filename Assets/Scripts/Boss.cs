@@ -23,6 +23,7 @@ public class Boss : MonoBehaviour, IHitable  {
 	public bool left = true;
 	public float fire_rate = 2f;
 	private float fire_count = 0f;
+	private bool dead = false;
 
 	public float jump_force = 600f;
 	public float jump_timer = 0f;
@@ -59,7 +60,11 @@ public class Boss : MonoBehaviour, IHitable  {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
+		if (dead)
+			return;
+		
 		if (vulnerable_timer >= 0) {
 			vulnerable_timer -= Time.deltaTime;
 			if (vulnerable_timer <= 0) {
@@ -71,8 +76,7 @@ public class Boss : MonoBehaviour, IHitable  {
 			hit_timer -= Time.deltaTime;
 		}
 		if (health <= 0){// || (Mathf.Abs(transform.position.x - player_transform.position.x) > 10)) {			
-			Instantiate(Resources.Load("Explode_Collection", typeof(GameObject)), transform.position, transform.rotation);
-			Destroy(gameObject);
+			Die();
 		}
 		if (fire_count < fire_rate) {
 			fire_count += Time.deltaTime;
@@ -88,6 +92,19 @@ public class Boss : MonoBehaviour, IHitable  {
 		} else {
 			jump_timer -= Time.deltaTime;
 		}
+	}
+
+	void Die()
+	{
+		Instantiate(Resources.Load("Explode_Collection", typeof(GameObject)), transform.position, transform.rotation);
+		Invoke ("Restart", 3);
+		gameObject.SetActive(false);
+		dead = true;
+	}
+
+	void Restart()
+	{
+		Application.LoadLevel("Main");
 	}
 	
 	void FixedUpdate() {

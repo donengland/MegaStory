@@ -1,0 +1,154 @@
+fileFormatVersion: 2
+guid: 1ebf4b428f7f4944094056fa09157fdd
+timeCreated: 1575470487
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Health_Background
+    21300002: Health_Foreground
+    21300004: Red_1
+    21300006: Red_2
+    21300008: Red_3
+    21300010: White_1
+    21300012: White_2
+    21300014: White_3
+    21300016: Spikes
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Health_Background
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 348
+        width: 50
+        height: 150
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Health_Foreground
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 347
+        width: 46
+        height: 146
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Red_1
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 422
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Red_2
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 419
+        width: 89
+        height: 85
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Red_3
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 419
+        width: 56
+        height: 57
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: White_1
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 326
+        width: 81
+        height: 83
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: White_2
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 326
+        width: 81
+        height: 83
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: White_3
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 326
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spikes
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 267
+        width: 51
+        height: 50
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
